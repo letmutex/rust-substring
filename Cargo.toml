@@ -1,0 +1,17 @@
+[package]
+name = "rust-substring"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[dev-dependencies]
+criterion = { version = "0.4", features = ["html_reports"] }
+
+[lib]
+name = "substring"
+path = "lib/substring.rs"
+
+[[bench]]
+name = "substring_bench"
+harness = false
