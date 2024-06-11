@@ -108,15 +108,15 @@ mod test {
         verify_cases_with_fn(substring_v5);
     }
 
-    fn verify_cases_with_fn_string(text_func: impl Fn(&str, usize, usize) -> String) {
+    fn verify_cases_with_fn_string(func: impl Fn(&str, usize, usize) -> String) {
         for case in cases() {
-            assert_eq!(case.expected, text_func(case.text, case.start, case.end));
+            assert_eq!(case.expected, func(case.text, case.start, case.end));
         }
     }
 
-    fn verify_cases_with_fn(text_func: impl Fn(&str, usize, usize) -> &str) {
+    fn verify_cases_with_fn(func: impl Fn(&str, usize, usize) -> &str) {
         for case in cases() {
-            assert_eq!(case.expected, text_func(case.text, case.start, case.end));
+            assert_eq!(case.expected, func(case.text, case.start, case.end));
         }
     }
 
