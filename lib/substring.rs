@@ -152,6 +152,24 @@ mod test {
                 end: 20,
                 expected: "llo✨, 🎈 this 🎉 is ",
             },
+            Case {
+                text: "こんにちは世界！",
+                start: 3,
+                end: 7,
+                expected: "ちは世界",
+            },
+            Case {
+                text: "你好，世界！",
+                start: 3,
+                end: 5,
+                expected: "世界",
+            },
+            Case {
+                text: "This is 👩‍👨‍👦, A ZWJ emoji",
+                start: 8,
+                end: 13,
+                expected: "👩‍👨‍👦", // 👩 + U+200D + 👨 + U+200D + 👦
+            },
         ]
     }
 }
